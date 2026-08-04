@@ -1,0 +1,27 @@
+class College {
+
+    int studentId;
+    String studentName;
+
+    static String collegeName = "ABC Engineering College";
+
+    College(int studentId, String studentName) {
+        this.studentId = studentId;
+        this.studentName = studentName;
+    }
+
+    void display() {
+        System.out.println("Student ID : " + studentId);
+        System.out.println("Student Name : " + studentName);
+        System.out.println("College Name : " + collegeName);
+    }
+
+    public static void main(String[] args) {
+
+        College s1 = new College(1, "Rahul");
+        College s2 = new College(2, "Priya");
+
+        s1.display();
+        s2.display();
+    }
+}
