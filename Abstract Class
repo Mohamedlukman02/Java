@@ -1,0 +1,124 @@
+### E-Commerce Payment System  ###
+
+abstract class Payment {
+
+    double amount;
+    String transactionId;
+    String paymentDate;
+
+    Payment(double amount, String transactionId, String paymentDate) {
+        this.amount = amount;
+        this.transactionId = transactionId;
+        this.paymentDate = paymentDate;
+    }
+
+    abstract void processPayment();
+}
+
+class CreditCard extends Payment {
+
+    CreditCard(double amount, String transactionId, String paymentDate) {
+        super(amount, transactionId, paymentDate);
+    }
+
+    void processPayment() {
+        System.out.println("Credit Card Payment Processed");
+    }
+}
+
+class UPI extends Payment {
+
+    UPI(double amount, String transactionId, String paymentDate) {
+        super(amount, transactionId, paymentDate);
+    }
+
+    void processPayment() {
+        System.out.println("UPI Payment Processed");
+    }
+}
+
+class NetBanking extends Payment {
+
+    NetBanking(double amount, String transactionId, String paymentDate) {
+        super(amount, transactionId, paymentDate);
+    }
+
+    void processPayment() {
+        System.out.println("Net Banking Payment Processed");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Payment p1 = new CreditCard(1000, "TX101", "05-08-2026");
+        Payment p2 = new UPI(500, "TX102", "05-08-2026");
+        Payment p3 = new NetBanking(2000, "TX103", "05-08-2026");
+
+        p1.processPayment();
+        p2.processPayment();
+        p3.processPayment();
+    }
+}
+
+### Employee Salary System ###
+
+abstract class Employee {
+
+    int id;
+    String name;
+
+    Employee(int id, String name) {
+        this.id = id;
+        this.name = name;
+    }
+
+    void displayDetails() {
+        System.out.println("ID : " + id);
+        System.out.println("Name : " + name);
+    }
+
+    abstract void calculateSalary();
+}
+
+class FullTimeEmployee extends Employee {
+
+    FullTimeEmployee(int id, String name) {
+        super(id, name);
+    }
+
+    void calculateSalary() {
+        System.out.println("Salary : 50000");
+    }
+}
+
+class PartTimeEmployee extends Employee {
+
+    PartTimeEmployee(int id, String name) {
+        super(id, name);
+    }
+
+    void calculateSalary() {
+        System.out.println("Salary : 20000");
+    }
+}
+
+class ContractEmployee extends Employee {
+
+    ContractEmployee(int id, String name) {
+        super(id, name);
+    }
+
+    void calculateSalary() {
+        System.out.println("Salary : 30000");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Employee e1 = new FullTimeEmployee(101, "Rahul");
+        e1.displayDetails();
+        e1.calculateSalary();
+    }
+}
