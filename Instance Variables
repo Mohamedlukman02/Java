@@ -1,27 +1,24 @@
-class College {
+class BankAccount {
 
-    int studentId;
-    String studentName;
+    int accountNumber;
+    double balance;
 
-    static String collegeName = "ABC Engineering College";
-
-    College(int studentId, String studentName) {
-        this.studentId = studentId;
-        this.studentName = studentName;
+    BankAccount(int accountNumber, double balance) {
+        this.accountNumber = accountNumber;
+        this.balance = balance;
     }
 
     void display() {
-        System.out.println("Student ID : " + studentId);
-        System.out.println("Student Name : " + studentName);
-        System.out.println("College Name : " + collegeName);
+        System.out.println("Account Number : " + accountNumber);
+        System.out.println("Balance : " + balance);
     }
 
     public static void main(String[] args) {
 
-        College s1 = new College(1, "Rahul");
-        College s2 = new College(2, "Priya");
+        BankAccount acc1 = new BankAccount(1001, 15000);
+        BankAccount acc2 = new BankAccount(1002, 25000);
 
-        s1.display();
-        s2.display();
+        acc1.display();
+        acc2.display();
     }
 }
