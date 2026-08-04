@@ -1,0 +1,89 @@
+### Smart Devices ###
+
+interface SmartDevice {
+
+    void turnOn();
+
+    void turnOff();
+}
+
+class SmartBulb implements SmartDevice {
+
+    public void turnOn() {
+        System.out.println("Smart Bulb ON");
+    }
+
+    public void turnOff() {
+        System.out.println("Smart Bulb OFF");
+    }
+}
+
+class SmartFan implements SmartDevice {
+
+    public void turnOn() {
+        System.out.println("Smart Fan ON");
+    }
+
+    public void turnOff() {
+        System.out.println("Smart Fan OFF");
+    }
+}
+
+class SmartAC implements SmartDevice {
+
+    public void turnOn() {
+        System.out.println("Smart AC ON");
+    }
+
+    public void turnOff() {
+        System.out.println("Smart AC OFF");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        SmartDevice device = new SmartBulb();
+
+        device.turnOn();
+        device.turnOff();
+    }
+}
+
+### Notification System ###
+
+
+interface Notification {
+
+    void sendNotification();
+}
+
+class EmailNotification implements Notification {
+
+    public void sendNotification() {
+        System.out.println("Email Notification Sent");
+    }
+}
+
+class SMSNotification implements Notification {
+
+    public void sendNotification() {
+        System.out.println("SMS Notification Sent");
+    }
+}
+
+class WhatsAppNotification implements Notification {
+
+    public void sendNotification() {
+        System.out.println("WhatsApp Notification Sent");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+
+        Notification n = new EmailNotification();
+
+        n.sendNotification();
+    }
+}
